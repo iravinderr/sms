@@ -11,4 +11,6 @@ const dbConnect = () => {
         console.error(error.message);
         process.exit(1);
     })
-}
+};
+
+module.exports = dbConnect;
