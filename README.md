@@ -1,3 +1,3 @@
 # packages to install on device
 
-# npm i, mongoose, dotenv
+# npm i, mongoose, dotenv, nodemon, express
