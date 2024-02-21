@@ -7,11 +7,8 @@ import { IoMdCreate } from "react-icons/io";
 import { FaSave } from "react-icons/fa";
 import { GrAnnounce } from "react-icons/gr";
 import { MdAnnouncement } from "react-icons/md";
-<<<<<<< HEAD
-=======
 import Uploadf from "../components/Uploadf";
 
->>>>>>> f39ae3ce09fd44e5a179bb5f331ed0bea76fde53
 
 function Annoucements() {
   const [showModal, setShowModal] = useState(false);
@@ -124,13 +121,9 @@ function Annoucements() {
                     </form>
                   </div>
                   {/*footer*/}
-<<<<<<< HEAD
-                  <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-=======
                  
                   <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
                   <Uploadf/>
->>>>>>> f39ae3ce09fd44e5a179bb5f331ed0bea76fde53
                     <button
                       className="text-custom-color background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 active:scale-95"
                       type="button"
