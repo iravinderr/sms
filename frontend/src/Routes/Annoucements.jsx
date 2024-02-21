@@ -9,7 +9,6 @@ import { GrAnnounce } from "react-icons/gr";
 import { MdAnnouncement } from "react-icons/md";
 import Uploadf from "../components/Uploadf";
 
-
 function Annoucements() {
   const [showModal, setShowModal] = useState(false);
 
@@ -121,9 +120,9 @@ function Annoucements() {
                     </form>
                   </div>
                   {/*footer*/}
-                 
+
                   <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                  <Uploadf/>
+                    <Uploadf />
                     <button
                       className="text-custom-color background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 active:scale-95"
                       type="button"
