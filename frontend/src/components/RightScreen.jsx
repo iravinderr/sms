@@ -22,9 +22,9 @@ function RightScreen({setIsLoggedIn,isLoggedIn}) {
         console.log(formData);
        
         // toast.success("Logged In");
-        // if(formData.email==="admin@email.com" && formData.password==="Admin@123"){
-        // }
-        navigate("/dashboard");
+        if(formData.email==="admin@email.com" && formData.password==="Admin@123"){
+            navigate("/dashboard");
+        }
     }
 
     function changeHandler(event) {
