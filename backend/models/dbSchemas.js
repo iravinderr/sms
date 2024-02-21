@@ -118,7 +118,27 @@ const subjectDB = mongoose.Schema({
     }
 });
 
+const annDB = mongoose.Schema({
+    title:{
+        type: String,
+        required: true,
+        maxLength: 50,
+    },
+    content:{
+        type: String,
+        required: true,
+        maxLength: 5000,
+    },
+    createdAt: {
+        type: Date,
+        required: true,
+        default: Date.now(),
+    }
+});
+
+
 module.exports = mongoose.model("studentDB", studentDB);
 module.exports = mongoose.model("teacherDB", teacherDB);
 module.exports = mongoose.model("deptDB", deptDB);
 module.exports = mongoose.model("subjectDB", subjectDB);
+module.exports = mongoose.model("annDB", annDB);
