@@ -4,3 +4,5 @@
 
 
 # backend files added -> Auth.js in controllers, auth.js in middlewares, User.js in models
+
+# cloudinary, express-fileupload, nodemail, axios, cors
