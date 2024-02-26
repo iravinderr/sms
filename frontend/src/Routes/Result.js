@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import LeftScreenDashboard from '../components/LeftScreenDashboard.jsx/LeftScreenDashboard';
 import RightAdmin from '../components/DashboadAdmin/RightAdmin';
+import ResultCard from './ResultCard';
 
 
 function Result() {
@@ -17,7 +18,16 @@ function Result() {
       
         <div className='w-4/5 h-screen'>
           <RightAdmin value={result}></RightAdmin>
+          <ResultCard/> 
+          
         </div>
+        <div></div>
+
+
+
+
+
+
         
    </div>
   )

@@ -31,8 +31,8 @@ const StudentTable = ({ students }) => {
   return (
     <div>
       <h2>Student Data</h2>
-      <table style={{ border: '1px solid black', borderCollapse: 'collapse' }}>
-        <thead>
+      <table style={{ border: '1px solid black', borderCollapse: 'collapse', width: 'auto'}}>
+        <thead className="w-full text-sm text-left rtl:text-right text-violet-500 ">
           <tr>
             <th style={{ border: '1px solid black', padding: '8px' }} onClick={() => sortByColumn('name')}>
               Name {sortColumn === 'name' && sortDirection === 'asc' && '↑'}
@@ -60,7 +60,7 @@ const StudentTable = ({ students }) => {
         </thead>
         <tbody>
           {editableStudents.map((student, index) => (
-            <tr key={index}>
+            <tr className="" key={index}>
               <td style={{ border: '1px solid black', padding: '8px' }}>
                 <input
                   type="text"

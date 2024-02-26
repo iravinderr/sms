@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import LeftScreenDashboard from "../components/LeftScreenDashboard.jsx/LeftScreenDashboard";
 import RightAdmin from "../components/DashboadAdmin/RightAdmin";
 import DataSec from "./DataSec";
+import SubjectCard from './SubjectCard';
 
 function Teacher() {
   const [teacher, setTeacher] = useState("Teacher");
+  
   return (
     <div>
       <div className="bg-lavender font-poppins text-black-blue flex">
@@ -14,7 +16,8 @@ function Teacher() {
 
         <div className="w-4/5 h-screen">
           <RightAdmin value={teacher}></RightAdmin>
-          <DataSec />
+          <SubjectCard/>
+          {/* <DataSec /> */}
         </div>
       </div>
       
