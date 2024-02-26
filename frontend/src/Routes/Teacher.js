@@ -14,9 +14,12 @@ function Teacher() {
           <LeftScreenDashboard></LeftScreenDashboard>
         </div>
 
-        <div className="w-4/5 h-screen">
+        <div className="w-4/5 h-screen ">
           <RightAdmin value={teacher}></RightAdmin>
-          <SubjectCard/>
+          {/* <div className="flex items-center justify-center mx-auto mt-14 w-full px-8"> */}
+            <SubjectCard/>
+          {/* </div>  */}
+          
           {/* <DataSec /> */}
         </div>
       </div>

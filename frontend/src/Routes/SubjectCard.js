@@ -10,14 +10,15 @@ const SubjectCard = () => {
     setShowTable(true);
   };
   return (
-    <div className="content-center items-center">
+    <div className="flex items-center justify-center mx-auto">
       {!showTable ? (
-      <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+      <div className="w-full space-y-6 max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+        
         <form className="space-y-6" action="#">
           <h5 className="text-xl font-medium text-gray-900 dark:text-white">
             Select Subject
           </h5>
-          {/* </form> */}
+          </form>
 
           <form className="max-w-sm mx-auto">
             <label
@@ -66,7 +67,7 @@ const SubjectCard = () => {
                 Not registered? <a href="#" className="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
             </div> */}
      
-        </form>  </div>) : (
+          </div>) : (
         <DataSec />)}
     </div>
   );

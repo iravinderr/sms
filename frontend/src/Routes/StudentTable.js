@@ -31,8 +31,9 @@ const StudentTable = ({ students }) => {
   return (
     <div>
       <h2>Student Data</h2>
-      <table style={{ border: '1px solid black', borderCollapse: 'collapse', width: 'auto'}}>
-        <thead className="w-full text-sm text-left rtl:text-right text-violet-500 ">
+      
+      <table className="overflow-x-hidden" style={{ border: '1px solid black', borderCollapse: 'collapse',}}>
+        <thead className="text-sm text-left rtl:text-right text-violet-500   ">
           <tr>
             <th style={{ border: '1px solid black', padding: '8px' }} onClick={() => sortByColumn('name')}>
               Name {sortColumn === 'name' && sortDirection === 'asc' && '↑'}
@@ -50,15 +51,16 @@ const StudentTable = ({ students }) => {
               End Sem Marks {sortColumn === 'endSemMarks' && sortDirection === 'asc' && '↑'}
               {sortColumn === 'endSemMarks' && sortDirection === 'desc' && '↓'}
             </th>
-            <th style={{ border: '1px solid black', padding: '8px' }}>Total</th>
             <th style={{ border: '1px solid black', padding: '8px' }} onClick={() => sortByColumn('internals')}>
               Internals {sortColumn === 'internals' && sortDirection === 'asc' && '↑'}
               {sortColumn === 'internals' && sortDirection === 'desc' && '↓'}
             </th>
+            <th style={{ border: '1px solid black', padding: '8px' }}>Total</th>
             <th style={{ border: '1px solid black', padding: '8px' }}>Attendance</th>
           </tr>
         </thead>
         <tbody>
+
           {editableStudents.map((student, index) => (
             <tr className="" key={index}>
               <td style={{ border: '1px solid black', padding: '8px' }}>
@@ -90,14 +92,14 @@ const StudentTable = ({ students }) => {
                 />
               </td>
               <td style={{ border: '1px solid black', padding: '8px' }}>
-                {parseInt(student.midSemMarks) + parseInt(student.endSemMarks) + parseInt(student.internals)}
-              </td>
-              <td style={{ border: '1px solid black', padding: '8px' }}>
                 <input
                   type="text"
                   value={student.internals}
                   onChange={(event) => handleInputChange(event, index, 'internals')}
                 />
+              </td>
+              <td style={{ border: '1px solid black', padding: '8px' }}>
+                {parseInt(student.midSemMarks) + parseInt(student.endSemMarks) + parseInt(student.internals)}
               </td>
               <td style={{ border: '1px solid black', padding: '8px' }}>
                 <input
