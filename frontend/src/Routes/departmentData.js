@@ -11,6 +11,10 @@ const departmentsData = [
       departmentName: "Mechanical Engineering",
       subjects: ["Thermodynamics", "Fluid Mechanics", "Mechanics of Materials", "Machine Design", "Manufacturing Processes"]
     },
+    {
+      departmentName: "Mechanical Engineering",
+      subjects: ["Thermodynamics", "Fluid Mechanics", "Mechanics of Materials", "Machine Design", "Manufacturing Processes"]
+    },
     // Add more departments as needed
   ];
   
