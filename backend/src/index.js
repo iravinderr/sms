@@ -1,0 +1,25 @@
+// IMPORTING THE .env CONFIGURATION
+require("dotenv").config();
+const dbConnect = require("./config/database.config");
+const cdConnect = require("./config/cloudinary.config");
+
+
+const PORT = process.env.PORT || 4000;
+
+
+// INITIALISING THE EXPRESS APP/SERVER
+const app = require("./app");
+
+
+// CONNECTING THE SERVER WITH CLOUDINARY
+cdConnect();
+
+
+// CONNECTING THE SERVER WITH THE DATABASE
+dbConnect();
+
+
+// ACTIVATING THE SERVER TO LISTEN
+app.listen(PORT, () => {
+    console.log(`Server is listening at port no. ${PORT}`);
+})
