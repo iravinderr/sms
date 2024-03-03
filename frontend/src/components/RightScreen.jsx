@@ -6,6 +6,7 @@ import {  useNavigate,Link } from 'react-router-dom';
 import { useState } from 'react';
 
 function RightScreen({setIsLoggedIn,isLoggedIn}) {
+    const [selectedRole,setSelectedRole]=useState("");
 
     const[formData,setFormData]=useState({
         email:"",
@@ -35,12 +36,30 @@ function RightScreen({setIsLoggedIn,isLoggedIn}) {
                 [event.target.name]:event.target.value
             }
         ) )
+    }
+  
+
+    function handlerChange(e){
+        e.preventDefault();
+        setSelectedRole(e.target.value);
+        console.log("Role on frontend is ---->",selectedRole)
 
     }
   return (
     <div className='h-screen w-2/4 absolute top-0 right-0 flex justify-center items-center font-poppins'>
         <div className='w-[480px] h-[480px]  flex flex-col justify-center items-start gap-8'>
-            <h1 className=' text-4xl font-extralight  '>Login</h1>
+            
+            <div className='flex w-screen gap-4'>
+                <h1 className=' text-4xl font-extralight  '>Login As</h1>
+                <select name="role" id="role" value={selectedRole} onChange={handlerChange}>
+                    <option value="">Select Role</option>
+                    <option value="admin">Admin</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="student">Student</option>
+                </select>
+            </div>
+            
+
 
 
             <form  onSubmit={submitHandler} className='w-full flex flex-col gap-4' >

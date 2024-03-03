@@ -4,7 +4,7 @@ import './App.css';
 import MainDashboard from './components/MainDashboard';
 import { useState } from 'react';
 import Login from './components/Login';
-import Annoucements from './Routes/Annoucements';
+import Annoucements from './Routes/Annoucements.pop.up.';
 import Attendance from './Routes/Attendance';
 import Result from './Routes/Result';
 import Syllabus from './Routes/Syllabus';

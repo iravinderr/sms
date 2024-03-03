@@ -11,7 +11,9 @@ const ResultCard = () => {
     return (
       <div className="flex items-center justify-center mx-auto">
         {!ShowResult ? (
-        <div className="w-full space-y-6 max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <div className="w-full space-y-6 max-w-sm p-4 bg-white border
+         border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800
+          dark:border-gray-700">
           <form className="space-y-6" action="#">
             <h5 className="text-xl font-medium text-gray-900 dark:text-white">
               Select Subject
@@ -27,7 +29,10 @@ const ResultCard = () => {
               </label>
               <select
                 id="countries"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 
+                text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 
+                block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
+                 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
                 <option>Sub 1 C++</option>
                 <option>Sub 2 MECH</option>

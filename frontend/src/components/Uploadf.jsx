@@ -14,10 +14,9 @@ const FileUpload = () => {
     try {
       setUploading(true);
       const formData = new FormData();
-      formData.append('imageFile', file);
-      formData.append("name","FinalNameOnkar");
-      formData.append("email","FinalEmailrahulsidhu2002@gmail.com");
-      formData.append("tags","FinaltagsVideo");
+      formData.append('file', file);
+      formData.append('title',);
+      
 
       
       console.log("Form Data is------------------------>",formData);
@@ -55,7 +54,7 @@ const FileUpload = () => {
   return (
     <div>
       <h2>Image Upload</h2>
-      <input type="file" accept="image/*" onChange={handleFileChange} />
+      
       <button onClick={handleUpload} disabled={!file || uploading}>
         {uploading ? 'Uploading...' : 'Upload'}
       </button>
