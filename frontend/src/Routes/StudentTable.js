@@ -35,73 +35,76 @@ const StudentTable = ({ students }) => {
       <table className="overflow-x-hidden" style={{ border: '1px solid black', borderCollapse: 'collapse',}}>
         <thead className="text-sm text-left rtl:text-right text-violet-500   ">
           <tr>
-            <th style={{ border: '1px solid black', padding: '8px' }} onClick={() => sortByColumn('name')}>
+            <th style={{ border: '1px solid black', padding: '5px' }} onClick={() => sortByColumn('name')}>
               Name {sortColumn === 'name' && sortDirection === 'asc' && '↑'}
               {sortColumn === 'name' && sortDirection === 'desc' && '↓'}
             </th>
-            <th style={{ border: '1px solid black', padding: '8px' }} onClick={() => sortByColumn('rollNo')}>
+            <th style={{ border: '1px solid black', padding: '5px' }} onClick={() => sortByColumn('rollNo')}>
               Roll No {sortColumn === 'rollNo' && sortDirection === 'asc' && '↑'}
               {sortColumn === 'rollNo' && sortDirection === 'desc' && '↓'}
             </th>
-            <th style={{ border: '1px solid black', padding: '8px' }} onClick={() => sortByColumn('midSemMarks')}>
+            <th style={{ border: '1px solid black', padding: '5px' }} onClick={() => sortByColumn('midSemMarks')}>
               Mid Sem Marks {sortColumn === 'midSemMarks' && sortDirection === 'asc' && '↑'}
               {sortColumn === 'midSemMarks' && sortDirection === 'desc' && '↓'}
             </th>
-            <th style={{ border: '1px solid black', padding: '8px' }} onClick={() => sortByColumn('endSemMarks')}>
+            <th style={{ border: '1px solid black', padding: '5px' }} onClick={() => sortByColumn('endSemMarks')}>
               End Sem Marks {sortColumn === 'endSemMarks' && sortDirection === 'asc' && '↑'}
               {sortColumn === 'endSemMarks' && sortDirection === 'desc' && '↓'}
             </th>
-            <th style={{ border: '1px solid black', padding: '8px' }} onClick={() => sortByColumn('internals')}>
+            <th style={{ border: '1px solid black', padding: '5px' }} onClick={() => sortByColumn('internals')}>
               Internals {sortColumn === 'internals' && sortDirection === 'asc' && '↑'}
               {sortColumn === 'internals' && sortDirection === 'desc' && '↓'}
             </th>
-            <th style={{ border: '1px solid black', padding: '8px' }}>Total</th>
-            <th style={{ border: '1px solid black', padding: '8px' }}>Attendance</th>
+            <th style={{ border: '1px solid black', padding: '5px' }}>Total</th>
+            <th style={{ border: '1px solid black', padding: '5px' }}>Attendance</th>
           </tr>
         </thead>
         <tbody>
 
           {editableStudents.map((student, index) => (
             <tr className="" key={index}>
-              <td style={{ border: '1px solid black', padding: '8px' }}>
-                <input
+              <td className="  underline underline-offset-1 text-blue-500"style={{ border: '1px solid black', padding: '5px' }}>
+              {student.name}
+                {/* <input
                   type="text"
                   value={student.name}
                   onChange={(event) => handleInputChange(event, index, 'name')}
-                />
+                /> */}
               </td>
-              <td style={{ border: '1px solid black', padding: '8px' }}>
-                <input
+              <td style={{ border: '1px solid black', padding: '5px' }}>
+              {student.rollNo}
+
+                {/* <input
                   type="text"
                   value={student.rollNo}
                   onChange={(event) => handleInputChange(event, index, 'rollNo')}
-                />
+                /> */}
               </td>
-              <td style={{ border: '1px solid black', padding: '8px' }}>
+              <td style={{ border: '1px solid black', padding: '5px' }}>
                 <input
                   type="text"
                   value={student.midSemMarks}
                   onChange={(event) => handleInputChange(event, index, 'midSemMarks')}
                 />
               </td>
-              <td style={{ border: '1px solid black', padding: '8px' }}>
+              <td style={{ border: '1px solid black', padding: '5px' }}>
                 <input
                   type="text"
                   value={student.endSemMarks}
                   onChange={(event) => handleInputChange(event, index, 'endSemMarks')}
                 />
               </td>
-              <td style={{ border: '1px solid black', padding: '8px' }}>
+              <td style={{ border: '1px solid black', padding: '5px' }}>
                 <input
                   type="text"
                   value={student.internals}
                   onChange={(event) => handleInputChange(event, index, 'internals')}
                 />
               </td>
-              <td style={{ border: '1px solid black', padding: '8px' }}>
+              <td style={{ border: '1px solid black', padding: '5px' }}>
                 {parseInt(student.midSemMarks) + parseInt(student.endSemMarks) + parseInt(student.internals)}
               </td>
-              <td style={{ border: '1px solid black', padding: '8px' }}>
+              <td style={{ border: '1px solid black', padding: '5px' }}>
                 <input
                   type="text"
                   value={student.attendance}
