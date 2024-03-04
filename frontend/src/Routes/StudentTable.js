@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
+import StudentModal from '../components/Teacher/StudentModal';
 
 const StudentTable = ({ students }) => {
   const [editableStudents, setEditableStudents] = useState(students);
   const [sortDirection, setSortDirection] = useState(null);
   const [sortColumn, setSortColumn] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleNameClick = () => {
+    setShowModal(true);
+  };
 
   const handleInputChange = (event, index, field) => {
     const updatedStudents = [...editableStudents];
@@ -63,7 +69,7 @@ const StudentTable = ({ students }) => {
 
           {editableStudents.map((student, index) => (
             <tr className="" key={index}>
-              <td className="  underline underline-offset-1 text-blue-500"style={{ border: '1px solid black', padding: '5px' }}>
+              <td onClick={handleNameClick} className="  cursor-pointer underline underline-offset-1 text-blue-500"style={{ border: '1px solid black', padding: '5px' }}>
               {student.name}
                 {/* <input
                   type="text"
@@ -115,6 +121,7 @@ const StudentTable = ({ students }) => {
           ))}
         </tbody>
       </table>
+      {showModal && (<StudentModal showModal={showModal} setShowModal={setShowModal}/>)}
     </div>
   );
 };

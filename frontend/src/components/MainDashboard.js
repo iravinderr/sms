@@ -12,7 +12,7 @@ function MainDashboard() {
 
       <div className="w-4/5 h-screen">
         <RightAdmin value={dashboard}></RightAdmin>
-        <div className="flex flex-col  justify-between content-around ">
+        <div className="flex flex-col justify-between content-around ">
         <a
           href="#"
           className="block max-w-sm p-6 my-5 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
