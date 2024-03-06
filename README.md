@@ -1,8 +1,6 @@
-# packages to install on device
 
-# npm i, mongoose, dotenv, nodemon, express, bcrypt, jsonwebtoken
+# ================================ PACKAGES ===============================
 
+# DEPENDENCIES :- express, mongoose, dotenv, express-fileupload, fileupload, cloudinary, bcrypt, jsonwebtoken, axios, cors, nodemailer
 
-# backend files added -> Auth.js in controllers, auth.js in middlewares, User.js in models
-
-# cloudinary, express-fileupload, nodemail, axios, cors
+# DEV-DEPENDENCIES :- nodemon, prettier
