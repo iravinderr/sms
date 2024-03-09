@@ -21,5 +21,5 @@ dbConnect();
 
 // ACTIVATING THE SERVER TO LISTEN
 app.listen(PORT, () => {
-    console.log(`Server is listening at port no. ${PORT}`);
+    console.log(`SERVER IS LISTENING AT THE PORT NO. ${PORT}`);
 })
