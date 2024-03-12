@@ -15,6 +15,7 @@ const StudentTable = ({ students }) => {
     const updatedStudents = [...editableStudents];
     updatedStudents[index][field] = event.target.value;
     setEditableStudents(updatedStudents);
+    console.log({updatedStudents})
   };
 
   const sortByColumn = (column) => {
@@ -110,18 +111,19 @@ const StudentTable = ({ students }) => {
               <td style={{ border: '1px solid black', padding: '5px' }}>
                 {parseInt(student.midSemMarks) + parseInt(student.endSemMarks) + parseInt(student.internals)}
               </td>
-              <td style={{ border: '1px solid black', padding: '5px' }}>
-                <input
+              <td className={`${parseInt(student.attendance) > 75 ? 'bg-green-500' : 'bg-red-500'}`} style={{ border: '1px solid black', padding: '5px' }}>
+              {student.attendance} %
+                {/* <input
                   type="text"
                   value={student.attendance}
                   onChange={(event) => handleInputChange(event, index, 'attendance')}
-                />
+                /> */}
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      {showModal && (<StudentModal showModal={showModal} setShowModal={setShowModal}/>)}
+      {showModal && (<StudentModal showModal={showModal} setShowModal={setShowModal} students={students}/>)}
     </div>
   );
 };

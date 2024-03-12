@@ -9,6 +9,7 @@ const AttendanceTable = ({ students }) => {
     const updatedStudents = [...editableStudents];
     updatedStudents[index].attendance = value;
     setEditableStudents(updatedStudents);
+    console.log({editableStudents})
   };
 
   const handleTotalAttendanceChange = (e) => {

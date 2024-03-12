@@ -4,70 +4,70 @@ const studentsData = [
         rollNo: 101,
         midSemMarks: 85,
         endSemMarks: 90,
-        attendance: "95%"
+        attendance: "95"
     },
     {
         name: "Jane Smith",
         rollNo: 102,
         midSemMarks: 78,
         endSemMarks: 85,
-        attendance: "92%"
+        attendance: "92"
     },
     {
         name: "Michael Johnson",
         rollNo: 103,
         midSemMarks: 90,
         endSemMarks: 88,
-        attendance: "98%"
+        attendance: "98"
     },
     {
         name: "Emily Davis",
         rollNo: 104,
         midSemMarks: 82,
         endSemMarks: 80,
-        attendance: "90%"
+        attendance: "90"
     },
     {
         name: "David Wilson",
         rollNo: 105,
         midSemMarks: 88,
         endSemMarks: 92,
-        attendance: "96%"
+        attendance: "96"
     },
     {
         name: "Sarah Brown",
         rollNo: 106,
         midSemMarks: 95,
         endSemMarks: 87,
-        attendance: "94%"
+        attendance: "94 "
     },
     {
         name: "Christopher Lee",
         rollNo: 107,
         midSemMarks: 75,
         endSemMarks: 82,
-        attendance: "88%"
+        attendance: "88 "
     },
     {
         name: "Amanda Martinez",
         rollNo: 108,
         midSemMarks: 91,
         endSemMarks: 94,
-        attendance: "97%"
+        attendance: "97 "
     },
     {
         name: "James Taylor",
         rollNo: 109,
         midSemMarks: 86,
         endSemMarks: 89,
-        attendance: "93%"
+        attendance: "93 "
     },
     {
         name: "Olivia Anderson",
         rollNo: 110,
         midSemMarks: 83,
         endSemMarks: 91,
-        attendance: "91%"
+        attendance: "91 "
     }
 ];
 
