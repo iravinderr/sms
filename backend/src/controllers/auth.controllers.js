@@ -2,12 +2,11 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const studentDB = require("../models/student.models");
-const teacherDB = require("../models/teacher.models");
+const userDB = require("../models/user.models");
 
-const loginFunc = async(req, res, userDB) => {
+exports.login = async(req, res) => {
     try{
-        const {email, password} = req.body;
+        const {email, password, role} = req.body;
 
         if(!email || !password){
             return res.status(400).json({
@@ -26,7 +25,8 @@ const loginFunc = async(req, res, userDB) => {
 
         const payload = {
             email: user.email,
-            id: user._id, 
+            id: user._id,
+            role: user.role
         }
         if(await bcrypt.compare(password, user.password)){
             let token = jwt.sign(payload,
@@ -64,23 +64,9 @@ const loginFunc = async(req, res, userDB) => {
 }
 
 
-exports.login = (req, res) => {
-    const {role} = req.body;
-
-    if(role === "teacher"){
-        return loginFunc(req, res, teacherDB);
-    }
-    else if(role === "student"){
-        return loginFunc(req, res, studentDB);
-    }
-    // else if(role === "admin"){
-
-    // }
-}
-
-
-const createUserFunc = async(res, email, password, userDB) => {
+exports.createUser = async(req, res) => {
     try{
+        const {email, password, role} = req.body;
         const userExists = await userDB.findOne({email});
         if(userExists){
             res.status(400).json({
@@ -101,7 +87,7 @@ const createUserFunc = async(res, email, password, userDB) => {
             });
         }
 
-        const user = await userDB.create({email, password:hashedPassword});
+        const user = await userDB.create({email, password:hashedPassword, role});
 
         res.status(200).json({
             success: true,
@@ -117,19 +103,4 @@ const createUserFunc = async(res, email, password, userDB) => {
             message: "Internal Server Error"
         });
     }
-}
-
-
-exports.createUser = (req, res) => {
-    const {email, password, role} = req.body;
-
-    if(role === "teacher"){
-        return createUserFunc(res, email, password, teacherDB);
-    }
-    else if(role === "student"){
-        return createUserFunc(res, email, password, studentDB);
-    }
-    // else if(role === "admin"){
-    //     return 
-    // }
 }

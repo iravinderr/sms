@@ -4,8 +4,8 @@ const fileupload = require("express-fileupload");
 const annRoutes = require("./routes/ann.routes");
 const authRoutes = require("./routes/auth.routes");
 const createUserRoutes = require("./routes/createuser.routes");
-const app = express();
 
+const app = express();
 
 
 // ADDING MIDDLEWARE FOR PARSING THE JSON REQUEST BODY
