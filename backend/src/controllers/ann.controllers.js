@@ -1,13 +1,5 @@
 const mongoose = require("mongoose");
-const cloudinary = require("cloudinary").v2;
 const annDB = require("../models/ann.models");
-
-
-const uploadToCloudinary = async(file, folder) => {
-    const options = {folder};
-    options.resource_type = "auto";
-    return await cloudinary.uploader.upload(file.tempFilePath, options);
-}
 
 exports.createAnn = async(req, res) => {
     try{
@@ -33,8 +25,10 @@ exports.createAnn = async(req, res) => {
             fileType = `video`;
         }
 
-        const response = await uploadToCloudinary(file, "Announcements");
-        const annData = await annDB.create({title, content, url:response.secure_url});
+        const path = __dirname + "/../../public/files/" + Date.now() + `.${fileExt}`;
+        file.mv(path);
+
+        const annData = await annDB.create({title, content, url:`${path}`});
 
         res.status(200).json({
             success: true,
