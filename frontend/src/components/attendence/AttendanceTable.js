@@ -5,11 +5,12 @@ const AttendanceTable = ({ students }) => {
   const [totalAttendance, setTotalAttendance] = useState(100); // Default total attendance
   const [sortOrder, setSortOrder] = useState({ field: null, order: "asc" });
 
+  
   const handleAttendanceChange = (index, value) => {
     const updatedStudents = [...editableStudents];
     updatedStudents[index].attendance = value;
     setEditableStudents(updatedStudents);
-    console.log({editableStudents})
+    // console.log({editableStudents})
   };
 
   const handleTotalAttendanceChange = (e) => {
@@ -117,7 +118,9 @@ const AttendanceTable = ({ students }) => {
               <td style={{ border: "1px solid black", padding: "5px" }}>
                 {student.rollNo}
               </td>
+
               <td style={{ border: "1px solid black", padding: "5px" }}>
+
                 <input
                   type="number"
                   value={student.attendance}
@@ -125,6 +128,7 @@ const AttendanceTable = ({ students }) => {
                     handleAttendanceChange(index, e.target.value)
                   }
                 />
+
                 /{totalAttendance}{" "}
                 {
                   // Displaying the total attendance in the header
@@ -140,11 +144,13 @@ const AttendanceTable = ({ students }) => {
           ))}
         </tbody>
       </table>
+
+
       <div className="    ml-11 mt-6 items-end">
         <button
           type="button"
           class="focus:outline-none text-white bg-purple-500 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-500 dark:focus:ring-purple-500"
-        >
+        > 
           Submit
         </button>
       </div>

@@ -6,16 +6,26 @@ const StudentTable = ({ students }) => {
   const [sortDirection, setSortDirection] = useState(null);
   const [sortColumn, setSortColumn] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [modalStudent, setModalStudent] = useState(null);
 
-  const handleNameClick = () => {
+  const handleNameClick = (student) => {
     setShowModal(true);
+    setModalStudent(student);
   };
 
   const handleInputChange = (event, index, field) => {
     const updatedStudents = [...editableStudents];
     updatedStudents[index][field] = event.target.value;
     setEditableStudents(updatedStudents);
-    console.log({updatedStudents})
+    // console.log({updatedStudents})
+  };
+  const handleNextButtonClick = () => {
+    // Find the index of the current student
+    const currentIndex = students.findIndex((student) => student === modalStudent);
+    // Calculate the index of the next student
+    const nextIndex = (currentIndex + 1) % students.length;
+    // Set the next student as modal student
+    setModalStudent(students[nextIndex]);
   };
 
   const sortByColumn = (column) => {
@@ -70,7 +80,7 @@ const StudentTable = ({ students }) => {
 
           {editableStudents.map((student, index) => (
             <tr className="" key={index}>
-              <td onClick={handleNameClick} className="  cursor-pointer underline underline-offset-1 text-blue-500"style={{ border: '1px solid black', padding: '5px' }}>
+              <td onClick={()=>handleNameClick(student)} className="  cursor-pointer underline underline-offset-1 text-blue-500"style={{ border: '1px solid black', padding: '5px' }}>
               {student.name}
                 {/* <input
                   type="text"
@@ -123,7 +133,7 @@ const StudentTable = ({ students }) => {
           ))}
         </tbody>
       </table>
-      {showModal && (<StudentModal showModal={showModal} setShowModal={setShowModal} students={students}/>)}
+      {showModal && (<StudentModal showModal={showModal} setShowModal={setShowModal} student={modalStudent} onNext={handleNextButtonClick}/>)}
     </div>
   );
 };
