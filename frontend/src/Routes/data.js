@@ -4,74 +4,85 @@ const studentsData = [
         rollNo: 101,
         midSemMarks: 85,
         endSemMarks: 90,
-        attendance: "95"
+        attendance: "95",
+        internals: 75 // Example value, replace with actual internals marks
     },
     {
         name: "Jane Smith",
         rollNo: 102,
         midSemMarks: 78,
         endSemMarks: 85,
-        attendance: "92"
+        attendance: "92",
+        internals: 80 // Example value, replace with actual internals marks
     },
     {
         name: "Michael Johnson",
         rollNo: 103,
         midSemMarks: 90,
         endSemMarks: 88,
-        attendance: "98"
+        attendance: "98",
+        internals: 70 // Example value, replace with actual internals marks
     },
     {
         name: "Emily Davis",
         rollNo: 104,
         midSemMarks: 82,
         endSemMarks: 80,
-        attendance: "90"
+        attendance: "90",
+        internals: 85 // Example value, replace with actual internals marks
     },
     {
         name: "David Wilson",
         rollNo: 105,
         midSemMarks: 88,
         endSemMarks: 92,
-        attendance: "96"
+        attendance: "96",
+        internals: 78 // Example value, replace with actual internals marks
     },
     {
         name: "Sarah Brown",
         rollNo: 106,
         midSemMarks: 95,
         endSemMarks: 87,
-        attendance: "94 "
+        attendance: "94",
+        internals: 82 // Example value, replace with actual internals marks
     },
     {
         name: "Christopher Lee",
         rollNo: 107,
         midSemMarks: 75,
         endSemMarks: 82,
-        attendance: "88 "
+        attendance: "88",
+        internals: 72 // Example value, replace with actual internals marks
     },
     {
         name: "Amanda Martinez",
         rollNo: 108,
         midSemMarks: 91,
         endSemMarks: 94,
-        attendance: "97 "
+        attendance: "97",
+        internals: 76 // Example value, replace with actual internals marks
     },
     {
         name: "James Taylor",
         rollNo: 109,
         midSemMarks: 86,
         endSemMarks: 89,
-        attendance: "93 "
+        attendance: "93",
+        internals: 83 // Example value, replace with actual internals marks
     },
     {
         name: "Olivia Anderson",
         rollNo: 110,
         midSemMarks: 83,
         endSemMarks: 91,
-        attendance: "91 "
+        attendance: "91",
+        internals: 79 // Example value, replace with actual internals marks
     }
 ];
 
 module.exports = studentsData;
+
 
 // data.js
 

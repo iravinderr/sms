@@ -28,6 +28,15 @@ const StudentTable = ({ students }) => {
     setModalStudent(students[nextIndex]);
   };
 
+  const handlePrevButtonClick = () => {
+    // Find the index of the current student
+    const currentIndex = students.findIndex((student) => student === modalStudent);
+    // Calculate the index of the next student
+    const nextIndex = (currentIndex - 1) % students.length;
+    // Set the next student as modal student
+    setModalStudent(students[nextIndex]);
+  };
+
   const sortByColumn = (column) => {
     let sortedStudents = [...editableStudents];
     if (sortColumn === column) {
@@ -47,7 +56,7 @@ const StudentTable = ({ students }) => {
 
   return (
     <div>
-      <h2>Student Data</h2>
+      
       
       <table className="overflow-x-hidden" style={{ border: '1px solid black', borderCollapse: 'collapse',}}>
         <thead className="text-sm text-left rtl:text-right text-violet-500   ">
@@ -79,23 +88,15 @@ const StudentTable = ({ students }) => {
         <tbody>
 
           {editableStudents.map((student, index) => (
+            
             <tr className="" key={index}>
               <td onClick={()=>handleNameClick(student)} className="  cursor-pointer underline underline-offset-1 text-blue-500"style={{ border: '1px solid black', padding: '5px' }}>
               {student.name}
-                {/* <input
-                  type="text"
-                  value={student.name}
-                  onChange={(event) => handleInputChange(event, index, 'name')}
-                /> */}
+              
               </td>
               <td style={{ border: '1px solid black', padding: '5px' }}>
               {student.rollNo}
 
-                {/* <input
-                  type="text"
-                  value={student.rollNo}
-                  onChange={(event) => handleInputChange(event, index, 'rollNo')}
-                /> */}
               </td>
               <td style={{ border: '1px solid black', padding: '5px' }}>
                 <input
@@ -123,17 +124,17 @@ const StudentTable = ({ students }) => {
               </td>
               <td className={`${parseInt(student.attendance) > 75 ? 'bg-green-500' : 'bg-red-500'}`} style={{ border: '1px solid black', padding: '5px' }}>
               {student.attendance} %
-                {/* <input
-                  type="text"
-                  value={student.attendance}
-                  onChange={(event) => handleInputChange(event, index, 'attendance')}
-                /> */}
+                
               </td>
             </tr>
-          ))}
+            
+          )  )} 
+          
+          
+           { showModal &&  (<StudentModal  handleInputChange={handleInputChange}showModal={showModal} setShowModal={setShowModal} student={modalStudent} onNext={handleNextButtonClick} onPrev ={handlePrevButtonClick} /> )}
+          
         </tbody>
       </table>
-      {showModal && (<StudentModal showModal={showModal} setShowModal={setShowModal} student={modalStudent} onNext={handleNextButtonClick}/>)}
     </div>
   );
 };
